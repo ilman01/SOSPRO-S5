@@ -29,7 +29,7 @@
 }
 
 .navbar .nav-link.active {
-    background: linear-gradient(180deg, #2F0852, #2F0851);
+    background-color: #fff;
     color: #000 !important;
 }
 

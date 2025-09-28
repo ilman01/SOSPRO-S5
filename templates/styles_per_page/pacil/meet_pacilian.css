@@ -1,0 +1,82 @@
+.pacilians-section {
+  background: linear-gradient(to bottom, #270066, #120032);
+  padding: 60px 20px;
+  color: white;
+}
+
+.pacilians-title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.pacilians-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.pacilians-btn {
+  background-color: #310080;
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.pacilians-btn:hover,
+.pacilians-btn.active {
+  background-color: #5300d6;
+}
+
+.pacilians-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.pacilian-card {
+  background-color: #1a004c;
+  border-radius: 16px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.pacilian-card img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.pacilian-card h3 {
+  margin: 8px 0 4px;
+  font-size: 18px;
+}
+
+.pacilian-card p {
+  font-size: 14px;
+  color: #ccc;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .pacilians-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .pacilians-content {
+    grid-template-columns: 1fr;
+  }
+}

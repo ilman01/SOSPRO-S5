@@ -1,25 +1,20 @@
 {% from 'macros/vertical_space.html' import vertical_space %}
 
-<section class="container-fluid bg-gradient-custom-about2 text-color-section">
-    <div class="row d-flex justify-content-center align-items-center">
-        <section class="division">
-            <h2 class="division__title mb-3">MEET THE PACILIANS</h2>
-            
-            <div class="division__menu">
-                <div class="division__row">
-                    <a href="#manajemen" class="division__btn">Manajemen</a>
-                    <a href="#staf-pengajar" class="division__btn">Staf Pengajar</a>
-                    <a href="#security" class="division__btn">Keamanan</a>
-                </div>
-                <div class="division__row">
-                    <a href="#cleaning-service" class="division__btn">Kebersihan</a>
-                    <a href="#kantin" class="division__btn">Kantin</a>
-                    <a href="#gardener" class="division__btn">Tukang Kebun</a>
-                </div>
-            </div>
+<section class="pacil-section3">
+  <h2 class="pacilians-title">MEET THE PACILIANS</h2>
 
-            <div class="division__grid">
-            </div>
-        </section>
-    </div>
+  <div class="pacilians-buttons">
+    <button class="pacilians-btn active" data-category="dosen">Dosen</button>
+    <button class="pacilians-btn" data-category="asdos">Asdos</button>
+    <button class="pacilians-btn" data-category="kebersihan">Kebersihan</button>
+    <button class="pacilians-btn" data-category="kantin">Kantin</button>
+    <button class="pacilians-btn" data-category="keamanan">Keamanan</button>
+    <button class="pacilians-btn" data-category="tukang-kebun">Tukang Kebun</button>
+  </div>
+
+  <div class="pacilians-content" id="paciliansContent">
+    <!-- Konten Section 4 akan diganti dinamis via JS -->
+  </div>
 </section>
+
+

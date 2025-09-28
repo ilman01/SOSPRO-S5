@@ -1,0 +1,113 @@
+.pacil-section1 {
+  padding: 60px 20px;
+  background: linear-gradient(to bottom, #4000c7, #120144);
+  position: relative;
+}
+
+.pacil-section2 {
+  padding: 60px 20px;
+  background: linear-gradient(to bottom, #1E0253, #2C009C);
+  position: relative;
+}
+
+.pacil-section3{
+  padding: 60px 20px;
+  background: linear-gradient(to bottom, #20026C, #20026C);
+  position: relative;
+}
+
+
+.pacil-scroll-wrapper {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 20px;
+  scroll-behavior: smooth;
+  padding-bottom: 20px;
+}
+
+.pacil-slide {
+  flex: 0 0 100%;
+  display: flex;
+  background-color: #1b0075;
+  border-radius: 20px;
+  min-height: 400px;
+  scroll-snap-align: start;
+  color: white;
+  overflow: hidden;
+}
+
+.pacil-left {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.pacil-logo {
+  max-width: 300px;
+  margin-bottom: 20px;
+}
+
+.pacil-left h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.pacil-left p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.pacil-right {
+  flex: 1;
+  background-color: #ddd;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+/* Pagination Dots */
+.pagination-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #888;
+  opacity: 0.5;
+  transition: 0.3s;
+}
+
+.dot.active {
+  background-color: white;
+  opacity: 1;
+}
+
+/* Scrollbar hidden */
+.pacil-scroll-wrapper::-webkit-scrollbar {
+  display: none;
+}
+.pacil-scroll-wrapper {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .pacil-slide {
+    flex-direction: column;
+  }
+
+  .pacil-right {
+    border-radius: 0 0 20px 20px;
+    height: 200px;
+  }
+}
