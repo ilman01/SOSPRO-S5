@@ -59,4 +59,45 @@ document.addEventListener("DOMContentLoaded", () => {
     aboutUsButton.classList.add("active"); // Buat tombol bph aktif
     filterBlocks(aboutUsFilter); // Sembunyikan semua blok KECUALI blok Manajemen
   }
+     const memberCards = document.querySelectorAll('.member-card');
+    const modalOverlay = document.querySelector('.modal-overlay');
+    const modalCloseBtn = document.querySelector('.modal-close');
+    
+    // Elemen di dalam modal untuk diisi data
+    const modalImg = document.querySelector('.modal-img');
+    const modalName = document.querySelector('.modal-name');
+    const modalDetails = document.querySelector('.modal-details');
+
+    // Tambahkan event listener untuk setiap kartu anggota
+    memberCards.forEach(card => {
+        card.addEventListener('click', () => {
+            // 1. Ambil data dari kartu yang diklik
+            const imgSrc = card.querySelector('.member-card__img').src;
+            const name = card.querySelector('.member-card__name').innerText;
+            const details = card.dataset.details; // Ambil dari atribut data-details
+
+            // 2. Masukkan data ke dalam elemen-elemen modal
+            modalImg.src = imgSrc;
+            modalName.innerText = name;
+            modalDetails.innerHTML = details; // Pakai innerHTML agar tag <br> berfungsi
+
+            // 3. Tampilkan modal
+            modalOverlay.classList.add('active');
+        });
+    });
+
+    // Fungsi untuk menutup modal
+    const closeModal = () => {
+        modalOverlay.classList.remove('active');
+    };
+
+    // Tambahkan event listener untuk tombol close
+    modalCloseBtn.addEventListener('click', closeModal);
+
+    // Tambahkan event listener untuk overlay (menutup modal saat klik di luar area konten)
+    modalOverlay.addEventListener('click', (e) => {
+        if (e.target === modalOverlay) {
+            closeModal();
+        }
+    });
 });

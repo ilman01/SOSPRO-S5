@@ -55,9 +55,15 @@
 /* Kanan: Konten Tambahan */
 .pegawai-info {
   flex: 1 1 35%;
-  background-color: #ddd;
   border-radius: 16px;
-  min-height: 100%;
+  overflow: hidden; /* Penting agar gambar mengikuti border-radius */
+  display: flex; /* Membuat gambar di dalamnya bisa diatur */
+}
+
+.statistik-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Memastikan gambar mengisi area tanpa distorsi */
 }
 
 /* Responsive */

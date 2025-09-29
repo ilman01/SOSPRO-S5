@@ -120,16 +120,32 @@
 }
 
 .division__block-subtitle {
-  color: #b8b6d1;
+  color: #ffffffff;
   margin-bottom: 2rem;
 }
 
+/* BARU - Menggunakan CSS Grid */
 .division__members {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem;
+  display: grid;
+  grid-auto-flow: column; /* Ini adalah properti kunci: mengisi grid per kolom */
+  grid-template-rows: repeat(2, auto); /* Membuat 2 baris dengan tinggi otomatis */
+  
+  /* Menentukan lebar setiap kolom (agar 3 kolom terlihat) */
+  grid-auto-columns: calc(100% / 3 - 1rem); 
+
+  overflow-x: auto; /* Menambahkan scrollbar horizontal jika perlu */
+  gap: 1.5rem;      /* Jarak antar kartu */
+  padding-bottom: 20px; /* Memberi ruang untuk scrollbar */
 }
+.division__members:has(.member-card:only-child) {
+  /* Alihkan ke Flexbox untuk penataan tengah yang mudah */
+  display: flex;
+  justify-content: center;
+  
+  /* Hapus overflow agar tidak ada scrollbar yang tidak perlu */
+  overflow-x: hidden;
+}
+
 
 /* Pastikan ada di file CSS Anda */
 
@@ -153,7 +169,12 @@
   border-radius: 15px;
   padding: 1rem;
   text-align: center;
+  cursor: pointer;
   box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.member-card:hover {
+  transform: translateY(-5px);
 }
 
 /* [MODIFIKASI] Menambahkan properti untuk rasio 1:1 */
@@ -173,8 +194,82 @@
 
 .member-card__major {
   font-size: 0.9rem;
-  color: #bbb;
-  margin-bottom: 0.5rem;
+  color: #ffffffff;
+  margin-bottom: 0.3rem;
+}
+
+/*======== MODAL (POPUP) STYLING ========*/
+
+.modal-overlay {
+  display: none; /* Sembunyi secara default */
+  position: fixed; /* Tetap di layar bahkan saat di-scroll */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Latar belakang gelap transparan */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Memastikan modal berada di lapisan paling atas */
+}
+
+.modal-overlay.active {
+  display: flex; /* Tampilkan modal saat kelas .active ditambahkan */
+}
+
+.modal-content {
+  background-color: #1a0444; /* Warna sesuai tema kartu */
+  padding: 2rem;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+  transform: scale(0.9);
+  animation: modal-pop 0.3s ease-out forwards;
+}
+
+@keyframes modal-pop {
+  to {
+    transform: scale(1);
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.modal-close:hover {
+  transform: scale(1.2);
+}
+
+.modal-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%; /* Membuat gambar menjadi lingkaran */
+  object-fit: cover;
+  border: 4px solid var(--secondary); /* Border dengan warna sekunder */
+  margin-bottom: 1rem;
+}
+
+.modal-name {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.modal-details {
+  font-size: 1rem;
+  color: #ccc;
+  line-height: 1.6;
 }
 
 /*===== POSITIONING =====*/
