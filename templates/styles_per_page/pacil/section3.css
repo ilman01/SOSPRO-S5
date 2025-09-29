@@ -136,6 +136,7 @@
   overflow-x: auto; /* Menambahkan scrollbar horizontal jika perlu */
   gap: 1.5rem;      /* Jarak antar kartu */
   padding-bottom: 20px; /* Memberi ruang untuk scrollbar */
+  scrollbar-width: none; 
 }
 .division__members:has(.member-card:only-child) {
   /* Alihkan ke Flexbox untuk penataan tengah yang mudah */
