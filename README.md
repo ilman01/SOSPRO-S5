@@ -144,3 +144,34 @@ The project maintains two primary branches:
 - **production** - Live server branch containing filtered, production-ready code
 
 The production branch is kept separate from main to allow for code review and filtering before changes go live on the server. Only approved and tested changes from the main branch are merged into production for deployment.
+
+## Docker (Optional)
+
+Docker provides an optional way to run the project without installing dependencies directly on your host system.
+
+### Getting Started
+
+Clone the repository:
+
+```bash
+git clone <repository-url>
+cd <repository-directory>
+```
+
+Build the image and start the application:
+
+```bash
+docker compose up -d --build
+```
+
+This command builds the Docker image (if necessary) and starts the application in the background.
+
+### Stopping the Application
+
+To stop and remove the containers, run:
+
+```bash
+docker compose down
+```
+
+This stops the application and removes the containers created by Docker Compose. Any named volumes will be preserved unless explicitly removed.

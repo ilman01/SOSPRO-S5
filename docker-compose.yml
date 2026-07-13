@@ -1,0 +1,10 @@
+services:
+    sospro:
+        build:
+            context: .
+            
+        image: sospro:latest
+        container_name: SOSPRO-Container
+        restart: "no"
+        ports:
+            - "7004:7004"
